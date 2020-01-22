@@ -1,0 +1,28 @@
+kubectl apply -k ./
+kubectl get all --namespace hotel
+vi deployment/green/deploymentgreen.yaml
+git status
+git add .
+git commit -m "v1.1"
+git status
+kubectl apply -k ./
+kubectl get all --namespace hotel
+kubectl get rs --namespace hotel
+kubectl delete rs hotel-green-7bd99ff94 --namespace hotel
+kubectl get rs --namespace hotel
+kubectl get all --namespace hotel
+vi service/servicestable.yaml
+kubectl get all --namespace hotel
+vi deployment/blue/deploymentblue.yaml
+git status
+git add .
+git commit -m "V1.1 - RS from 3 to 0"
+kubectl get all --namespace hotel
+kubectl delete rs hotel-blue-6c488d56d5 --namespace hotel
+vi service/servicestable.yaml
+vi deployment/blue/deploymentblue.yaml
+vi deployment/green/deploymentgreen.yaml
+git add.
+git add .
+git commit -m "Roll Back to V1.0"
+kubectl apply -k ./

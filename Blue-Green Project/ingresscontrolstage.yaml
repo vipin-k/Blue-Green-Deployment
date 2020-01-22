@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hotel-ingress-stage
+  namespace: hotel
+spec:
+  rules:
+  - host: hotelstage.example.com 
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hotel-svc-stage
+          servicePort: 80

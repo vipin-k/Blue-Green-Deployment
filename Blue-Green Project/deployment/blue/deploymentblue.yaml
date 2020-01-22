@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-blue
+  namespace: hotel
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hotel
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: hotel
+        version: blue
+    spec:
+      containers:
+      - name: hotel
+        image: vipindevops/blue-green:tagname:1.0
+        ports:
+        - containerPort: 80
